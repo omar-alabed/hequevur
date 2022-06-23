@@ -7,6 +7,9 @@ Hequevur is a basic HR system
 
 To Set Up the project properly without facing issues, please do the below using your favorite method (depending on your OS)
 
+* [frontend Prerequisite]
+* download and install node js
+
 * [setup database]
 * install mariadb-server 
 * install libmariadbclient-dev
