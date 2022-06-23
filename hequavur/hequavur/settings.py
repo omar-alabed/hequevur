@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.core.apps.CoreConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -72,11 +74,16 @@ WSGI_APPLICATION = 'hequavur.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# import pymysql
+# pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hequavur_db',
+        'USER': 'someone',
+        'PASSWORD': 'SimplePass1',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
