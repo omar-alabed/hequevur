@@ -31,8 +31,9 @@ If your command line prompt does not start with (venv) at this point, try runnin
 install required python packages by running `pip install -r requirements.txt`
 migrate database migrations to your pre-set database: `python manage.py migrate`
 run application using: `python manage.py runserver`
-create three departments by sending three POST requests to `/api/department` holding desired department name as department_name in the request body (to be replaced by a script)
-
+cd into frontend then `npm install` then `npm start dev`
+create three departments by sending three POST requests to `/api/department` holding desired department name as department_name in the request body
+or by going to `localhost:3000` then departments then add new departments using the GUI
 
 ## API Calls
 After running the server, access the three API end points via the links below (following the default localhost and port `http://127.0.0.1:8000/`)
