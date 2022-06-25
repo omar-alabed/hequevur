@@ -22,20 +22,15 @@ export class AddCandidateModal extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        let form_data = new FormData();
+        form_data.append('full_name', event.target.CandidateName.value);
+        form_data.append('date_of_birth', event.target.DateOfBirth.value);
+        form_data.append('years_of_experience', event.target.YearsOfExperience.value);
+        form_data.append('department', event.target.Department.value);
+        form_data.append('resume', this.state.selectedFile);
         fetch(process.env.REACT_APP_API + 'candidate/create', {
             method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                full_name: event.target.CandidateName.value,
-                date_of_birth: event.target.DateOfBirth.value,
-                years_of_experience: event.target.YearsOfExperience.value,
-                department: event.target.Department.value,
-                resume: this.state.selectedFile
-
-            })
+            body: form_data
         })
             .then(res => res.json())
             .then((result) => {
